@@ -1,4 +1,4 @@
 # Итоговая аттестация #
 
-![](C:\Users\Denis\Desktop\1.jpg)
+[1.jpg](https://postimg.cc/qzpwxTsY)
 
