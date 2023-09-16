@@ -1,4 +1,4 @@
 # Итоговая аттестация #
 
-[1.jpg](https://postimg.cc/qzpwxTsY)
+![1.jpeg](img/1.jpeg)
 
