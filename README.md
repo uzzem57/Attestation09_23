@@ -22,6 +22,10 @@
 
 ![3.png](Images/3.png)
 
+![3_1.png](Images/3_1.png)
+
+![3_2.png](Images/3_2.png)
+
 
 
 
