@@ -255,3 +255,6 @@ SELECT hm.Name, hm.Birthday, hm.Commands, ha.Genus_name, ya.Age_in_month\
 FROM hamsters hm\
 LEFT JOIN yang_animal ya ON ya.Name = hm.Name\
 LEFT JOIN home_animals ha ON ha.Id = hm.Genus_id;
+
+**13.Создать класс с Инкапсуляцией методов и наследованием по диаграмме.**
+
