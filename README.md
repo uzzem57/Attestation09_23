@@ -76,11 +76,11 @@ CREATE TABLE animal_classes\
 (\
 Id INT AUTO_INCREMENT PRIMARY KEY,\
 Class_name VARCHAR(20)\
-);\
+);
 
 INSERT INTO animal_classes (Class_name)\
 VALUES ('вьючные'),\
-('домашние');\
+('домашние');
 
 
 CREATE TABLE packed_animals\
@@ -89,12 +89,12 @@ Id INT AUTO_INCREMENT PRIMARY KEY,\
 Genus_name VARCHAR (20),\
 Class_id INT,\
 FOREIGN KEY (Class_id) REFERENCES animal_classes (Id) ON DELETE CASCADE ON UPDATE CASCADE\
-);\
+);
 
 INSERT INTO packed_animals (Genus_name, Class_id)\
 VALUES ('Лошади', 1),\
 ('Ослы', 1),  \
-('Верблюды', 1);\
+('Верблюды', 1);
 
 CREATE TABLE home_animals\
 (\
@@ -102,12 +102,12 @@ Id INT AUTO_INCREMENT PRIMARY KEY,\
 Genus_name VARCHAR (20),\
 Class_id INT,\
 FOREIGN KEY (Class_id) REFERENCES animal_classes (Id) ON DELETE CASCADE ON UPDATE CASCADE\
-);\
+);
 
 INSERT INTO home_animals (Genus_name, Class_id)\
 VALUES ('Кошки', 2),\
 ('Собаки', 2),  \
-('Хомяки', 2);\
+('Хомяки', 2);
 
 CREATE TABLE cats\
 (       \
