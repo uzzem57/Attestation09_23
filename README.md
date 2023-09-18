@@ -142,7 +142,7 @@ VALUES ('Шарик', '2020-01-01', 'ко мне, голос', 2),\
 ('Плуто', '2018-02-01', "сидеть,  фас", 2),\
 ('Чубайс', '2016-03-10', "сидеть,  место", 2);
 
-CREATE TABLE hamsters
+CREATE TABLE hamsters\
 (       
 Id INT AUTO_INCREMENT PRIMARY KEY,\
 Name VARCHAR(20),\
@@ -150,22 +150,22 @@ Birthday DATE,\
 Commands VARCHAR(50),\
 Genus_id int,\
 Foreign KEY (Genus_id) REFERENCES home_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE\
-);
+);\
 INSERT INTO hamsters (Name, Birthday, Commands, Genus_id)\
 VALUES ('Хомяк1', '2023-12-11', NULL, 3),\
 ('Хомяк2', '2023-01-11', NULL, 3),\  
 ('Хомяк3', '2023-03-10', NULL, 3),\
 ('Хомяк4', '2023-05-10', NULL, 3);
 
-CREATE TABLE horses
-(       
+CREATE TABLE horses\
+(      
 Id INT AUTO_INCREMENT PRIMARY KEY,\
 Name VARCHAR(20),\
 Birthday DATE,\
 Commands VARCHAR(50),\
 Genus_id int,\
 Foreign KEY (Genus_id) REFERENCES packed_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE\
-);
+);\
 INSERT INTO horses (Name, Birthday, Commands, Genus_id)\
 VALUES ('Лошадь1', '2015-01-12', NULL, 1),\
 ('Лошадь', '2017-03-12', "рысью", 1),\
@@ -173,14 +173,14 @@ VALUES ('Лошадь1', '2015-01-12', NULL, 1),\
 ('Лошадь4', '2028-11-10', "шагом", 1);
 
 CREATE TABLE donkeys
-(       
+(\       
 Id INT AUTO_INCREMENT PRIMARY KEY,\
 Name VARCHAR(20),\
 Birthday DATE,\
 Commands VARCHAR(50),\
 Genus_id int,\
 Foreign KEY (Genus_id) REFERENCES packed_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE\
-);
+);\
 INSERT INTO donkeys (Name, Birthday, Commands, Genus_id)\
 VALUES ('Осел1', '2020-05-10', NULL, 2),\
 ('Осел2', '2019-06-12', "", 2), \
@@ -188,14 +188,14 @@ VALUES ('Осел1', '2020-05-10', NULL, 2),\
 ('Осел4', '2018-10-10', NULL, 2);\
 
 CREATE TABLE camels
-(       
+(\       
 Id INT AUTO_INCREMENT PRIMARY KEY,\
 Name VARCHAR(20),\
 Birthday DATE,\
 Commands VARCHAR(50),\
 Genus_id int,\
 Foreign KEY (Genus_id) REFERENCES packed_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE
-);
+);\
 INSERT INTO camels (Name, Birthday, Commands, Genus_id)\
 VALUES ('Верблюд1', '2022-04-10', NULL, 3),\
 ('Верблюд2', '2019-03-12', NULL, 3), \ 
