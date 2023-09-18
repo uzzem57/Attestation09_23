@@ -64,12 +64,12 @@ sudo dpkg -r docker-ce-cli\
 
 ![6.png](Images/6.png)
 
-7. В подключенном MySQL репозитории создать базу данных “Друзья
+7.В подключенном MySQL репозитории создать базу данных “Друзья
    человека”
 
 CREATE DATABASE Human_friends;
 
-8. Создать таблицы с иерархией из диаграммы в БД
+8.Создать таблицы с иерархией из диаграммы в БД
 
 USE Human_friends;\
 CREATE TABLE animal_classes\
@@ -119,6 +119,88 @@ Genus_id int,\
 Foreign KEY (Genus_id) REFERENCES home_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE\
 );
 
+9.Заполнить низкоуровневые таблицы именами(животных), командами
+которые они выполняют и датами рождения
+
+INSERT INTO cats (Name, Birthday, Commands, Genus_id)\
+VALUES ('Мурзик', '2021-01-01', 'кс-кс-кс', 1),\
+('Васька', '2022-01-01', "фу!", 1), \ 
+('Ваучер', '2023-01-01', "", 1);
+
+CREATE TABLE dogs\
+(       
+Id INT AUTO_INCREMENT PRIMARY KEY,\
+Name VARCHAR(20),\
+Birthday DATE,\
+Commands VARCHAR(50),\
+Genus_id int,\
+Foreign KEY (Genus_id) REFERENCES home_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE\
+);\
+INSERT INTO dogs (Name, Birthday, Commands, Genus_id)\
+VALUES ('Шарик', '2020-01-01', 'ко мне, голос', 2),\
+('Тузик', '2022-06-12', "сидеть, лапу", 2),  \
+('Плуто', '2018-02-01', "сидеть,  фас", 2),\
+('Чубайс', '2016-03-10', "сидеть,  место", 2);
+
+CREATE TABLE hamsters
+(       
+Id INT AUTO_INCREMENT PRIMARY KEY,\
+Name VARCHAR(20),\
+Birthday DATE,\
+Commands VARCHAR(50),\
+Genus_id int,\
+Foreign KEY (Genus_id) REFERENCES home_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE\
+);
+INSERT INTO hamsters (Name, Birthday, Commands, Genus_id)\
+VALUES ('Хомяк1', '2023-12-11', NULL, 3),\
+('Хомяк2', '2023-01-11', NULL, 3),\  
+('Хомяк3', '2023-03-10', NULL, 3),\
+('Хомяк4', '2023-05-10', NULL, 3);
+
+CREATE TABLE horses
+(       
+Id INT AUTO_INCREMENT PRIMARY KEY,\
+Name VARCHAR(20),\
+Birthday DATE,\
+Commands VARCHAR(50),\
+Genus_id int,\
+Foreign KEY (Genus_id) REFERENCES packed_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE\
+);
+INSERT INTO horses (Name, Birthday, Commands, Genus_id)\
+VALUES ('Лошадь1', '2015-01-12', NULL, 1),\
+('Лошадь', '2017-03-12', "рысью", 1),\
+('Лошадь3', '2016-07-12', "бегом ", 1),\
+('Лошадь4', '2028-11-10', "шагом", 1);
+
+CREATE TABLE donkeys
+(       
+Id INT AUTO_INCREMENT PRIMARY KEY,\
+Name VARCHAR(20),\
+Birthday DATE,\
+Commands VARCHAR(50),\
+Genus_id int,\
+Foreign KEY (Genus_id) REFERENCES packed_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE\
+);
+INSERT INTO donkeys (Name, Birthday, Commands, Genus_id)\
+VALUES ('Осел1', '2020-05-10', NULL, 2),\
+('Осел2', '2019-06-12', "", 2), \
+('Осел3', '2017-08-12', "", 2),\
+('Осел4', '2018-10-10', NULL, 2);\
+
+CREATE TABLE camels
+(       
+Id INT AUTO_INCREMENT PRIMARY KEY,\
+Name VARCHAR(20),\
+Birthday DATE,\
+Commands VARCHAR(50),\
+Genus_id int,\
+Foreign KEY (Genus_id) REFERENCES packed_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+INSERT INTO camels (Name, Birthday, Commands, Genus_id)\
+VALUES ('Верблюд1', '2022-04-10', NULL, 3),\
+('Верблюд2', '2019-03-12', NULL, 3), \ 
+('Верблюд3', '2015-07-12', NULL, 3),\
+('Верблюд4', '2022-12-10', NULL, 3);
 
 
 
