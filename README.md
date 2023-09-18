@@ -124,7 +124,7 @@ Foreign KEY (Genus_id) REFERENCES home_animals (Id) ON DELETE CASCADE ON UPDATE 
 
 INSERT INTO cats (Name, Birthday, Commands, Genus_id)\
 VALUES ('Мурзик', '2021-01-01', 'кс-кс-кс', 1),\
-('Васька', '2022-01-01', "фу!", 1), \ 
+('Васька', '2022-01-01', "фу!", 1),  
 ('Ваучер', '2023-01-01', "", 1);
 
 CREATE TABLE dogs\
@@ -228,6 +228,8 @@ FROM animals WHERE Birthday BETWEEN ADDDATE(curdate(), INTERVAL -3 YEAR) AND ADD
 
 SELECT * FROM yang_animal;
 
+![11.png](Images/11.png)
+
 **12. Объединить все таблицы в одну, при этом сохраняя поля, указывающие на
 прошлую принадлежность к старым таблицам.**
 
@@ -255,6 +257,8 @@ SELECT hm.Name, hm.Birthday, hm.Commands, ha.Genus_name, ya.Age_in_month\
 FROM hamsters hm\
 LEFT JOIN yang_animal ya ON ya.Name = hm.Name\
 LEFT JOIN home_animals ha ON ha.Id = hm.Genus_id;
+
+![12.png](Images/12.png)
 
 **13.Создать класс с Инкапсуляцией методов и наследованием по диаграмме.**
 
