@@ -282,3 +282,5 @@ LEFT JOIN home_animals ha ON ha.Id = hm.Genus_id;
 считать в ресурсе try, если при заведения животного заполнены все поля.**
 
 ![10.png](Images/10.png)
+
+![15.png](Images/15.png)
